@@ -2,13 +2,9 @@ pub mod api;
 #[cfg(feature = "ssr")]
 #[tokio::main]
 async fn main() {
-    use axum::{
-        extract::FromRef,
-        routing::{get, post},
-        Router,
-    };
+    use axum::Router;
+    use leptos::logging::log;
     use leptos::prelude::*;
-    use leptos::{config::LeptosOptions, logging::log};
     use leptos_axum::{generate_route_list, LeptosRoutes};
     use massive::app::*;
     use massive::otro_upload::AppState;
